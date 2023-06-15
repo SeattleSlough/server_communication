@@ -23,12 +23,14 @@ DELETE - Delete a piece of data
 
 2. Data/what was requested
 
+
+
+**How to Send Data Between Client/Server**
+
 How to send data to servers with different code bases (i.e., languages like Python)
 
 - JSON (JavaScript Object Notation)
 - XML
-
-
 
 Two functions for passing data to and from JS to another server
 
@@ -36,7 +38,9 @@ Convert to a JS Object: JSON.parse()
 
 `var obj = JSON.parse('{"name":"John", "age": 30, "city": "New York"}');`
 
-
 Convert a JS Object: JSON.stringify()
 
 `var myJSON = JSON.stringify(obj);`
+
+
+**AJAX (Asynchronous JavaScript and XML)**
