@@ -23,8 +23,6 @@ DELETE - Delete a piece of data
 
 2. Data/what was requested
 
-
-
 **How to Send Data Between Client/Server**
 
 How to send data to servers with different code bases (i.e., languages like Python)
@@ -42,5 +40,11 @@ Convert a JS Object: JSON.stringify()
 
 `var myJSON = JSON.stringify(obj);`
 
-
 **AJAX (Asynchronous JavaScript and XML)**
+
+
+**Promises**
+
+Anobject that may produce a single value some time in the future, either a resolved value or a reason that it's not resolved (rejected)
+
+A promise is in one of three possibel states: fulfilled, rejected, or pending.
