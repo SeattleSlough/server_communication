@@ -6,4 +6,14 @@ const promise = new Promise( ( resolve, reject ) => {
    }
 } );
 
-promise.then( result => console.log( result ) );
+// example of chaining and throw/catch
+promise
+   .then( result => {
+      return result + '!';
+      //throw Error;
+   } )
+   .then( result2 => result2 + '?' )
+   .catch( () => console.log( 'error!' ) )
+   .then( result3 => {
+      console.log( result3 + '!' );
+   } ); 
