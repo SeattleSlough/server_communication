@@ -7,6 +7,7 @@ const promise = new Promise( ( resolve, reject ) => {
   }, 4000 );
 } );
 
+
 // #2) Run the above promise and make it console.log "success"
 promise.then( console.log );
 // or
