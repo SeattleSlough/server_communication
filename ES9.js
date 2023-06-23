@@ -62,21 +62,23 @@ const urls2 = [
    'https://jsonplaceholder.typicode.com/albums'
 ];
 
-// const getData = async function() {
-//    try {
-//       const [ users, posts, album ] = await Promise.all( urls2.map( url =>
-//          fetch( url ).then( resp => resp.json() )
-//       ) );
-//       console.log( users );
-//       console.log( posts );
-//       console.log( album );
+const getData = async function() {
+   try {
+      const [ users, posts, album ] = await Promise.all( urls2.map( async function( url ) {
+         const response = await fetch( url );
+         return response.json();
+      }
+      ) );
+      console.log( users );
+      console.log( posts );
+      console.log( album );
 
-//    } catch( err ) { // catch has to have an argument (the error being thrown)
-//       console.log( 'oops', err );
-//    }
-// };
+   } catch( err ) { // catch has to have an argument (the error being thrown)
+      console.log( 'oops', err );
+   }
+};
 
-// getData();
+getData();
 
 // recalling the for of loop
 const loopThroughUrls = array => {
