@@ -22,12 +22,15 @@ const urls = [
 ];
 
 const getData = async function() {
-  const [ users, posts, albums ] = await Promise.all( urls.map( url =>
-    fetch( url ) ) );
+  const [ users, posts, albums ] = await Promise.all( urls.map( async function( url ) {
 
-  console.log( await users.json() );
-  console.log( await posts.json() );
-  console.log( await albums.json() );
+    const response = await fetch( url );
+    await response.json();
+  } ) );
+
+  console.log( users );
+  console.log( posts );
+  console.log( albums );
 };
 
 // getData();
@@ -42,12 +45,15 @@ const urlsError = [
 
 const badInput = async function() {
   try {
-    const [ users, posts, albums ] = await Promise.all( urlsError.map( url =>
-      fetch( url ) ) );
+    const [ users, posts, albums ] = await Promise.all( urls.map( async function( url ) {
 
-    console.log( await users.json() );
-    console.log( await posts.json() );
-    console.log( await albums.json() );
+      const response = await fetch( url );
+      return response.json();
+    } ) );
+
+    console.log( users );
+    console.log( posts );
+    console.log( albums );
   } catch( err ) { console.log( err, 'oops' ); }
 };
 
